@@ -1,0 +1,81 @@
+version: '3.1'
+
+stories:
+  - story: happy path
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: mood_great
+      - action: utter_happy
+
+  - story: sad path 1
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: mood_unhappy
+      - action: utter_cheer_up
+      - action: utter_did_that_help
+      - intent: affirm
+      - action: utter_happy
+
+  - story: sad path 2
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: mood_unhappy
+      - action: utter_cheer_up
+      - action: utter_did_that_help
+      - intent: deny
+      - action: utter_goodbye
+
+  - story: List electives
+    steps:
+      - intent: ask_electives_list
+      - action: action_list_electives
+
+  - story: Elective details
+    steps:
+      - intent: ask_elective_details
+      - action: action_get_elective_details
+
+  - story: Suggest electives
+    steps:
+      - intent: suggest_electives
+      - action: utter_ask_interest
+      - intent: inform_interest
+        entities:
+          - interest
+      - action: action_suggest_electives
+
+  - story: Explain a course
+    steps:
+      - intent: explain_course
+        entities:
+          - course
+      - action: action_explain_course
+
+  - story: List courses by credits
+    steps:
+      - intent: ask_courses_by_credits
+      - action: action_list_courses_by_credits
+
+  - story: List courses by faculty
+    steps:
+      - intent: elective_by_faculty
+      - action: action_suggest_electives_by_faculty
+
+  - story: Suggest electives by credits range
+    steps:
+      - intent: suggest_electives_by_credits
+      - action: action_suggest_electives_by_credits
+
+
+  - story: who are you
+    steps:
+      - intent: who_are_you
+      - action: utter_who_are_you
+
+  - story: what can you do
+    steps:
+      - intent: what_can_you_do
+      - action: utter_what_can_you_do

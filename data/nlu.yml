@@ -1,0 +1,205 @@
+version: "3.1"
+
+nlu:
+- intent: greet
+  examples: |
+    - hey
+    - hello
+    - hi
+    - hello there
+    - good morning
+    - good evening
+    - moin
+    - hey there
+    - let's go
+    - hey dude
+    - goodmorning
+    - goodevening
+    - good afternoon
+
+- intent: goodbye
+  examples: |
+    - cu
+    - good by
+    - cee you later
+    - good night
+    - bye
+    - goodbye
+    - have a nice day
+    - see you around
+    - bye bye
+    - see you later
+
+- intent: affirm
+  examples: |
+    - yes
+    - y
+    - indeed
+    - of course
+    - that sounds good
+    - correct
+
+- intent: deny
+  examples: |
+    - no
+    - n
+    - never
+    - I don't think so
+    - don't like that
+    - no way
+    - not really
+
+- intent: mood_great
+  examples: |
+    - perfect
+    - great
+    - amazing
+    - feeling like a king
+    - wonderful
+    - I am feeling very good
+    - I am great
+    - I am amazing
+    - I am going to save the world
+    - super stoked
+    - extremely good
+    - so so perfect
+    - so good
+    - so perfect
+
+- intent: mood_unhappy
+  examples: |
+    - my day was horrible
+    - I am sad
+    - I don't feel very well
+    - I am disappointed
+    - super sad
+    - I'm so sad
+    - sad
+    - very sad
+    - unhappy
+    - not good
+    - not very good
+    - extremly sad
+    - so saad
+    - so sad
+
+- intent: bot_challenge
+  examples: |
+    - are you a bot?
+    - are you a human?
+    - am I talking to a bot?
+    - am I talking to a human?
+
+- intent: ask_electives_list
+  examples: |
+    - What electives are available?
+    - Show me the list of electives.
+    - What courses can I take?
+
+- intent: ask_elective_details
+  examples: |
+    - What are the prerequisites for [DS202](course_code)?
+    - Who teaches [MKT301](course_code)?
+
+- intent: suggest_electives
+  examples: |
+    - Can you suggest electives for me?
+    - What electives should I take?
+    - I like AI, what courses do you recommend?
+
+- intent: inform_interest
+  examples: |
+    - I am interested in [finance](interest).
+    - I am interested in [marketing](interest).
+    - I am interested in [operations](interest).
+    - I am interested in [analytics](interest).
+    - My interest is in [marketing](interest).
+    - My interest is in [operations](interest).
+    - My interest is in [analytics](interest).
+    - My interest is in [finance](interest).
+    - My interest is in [hr](interest).
+    - I like [analytics](interest).
+    - I like [operations](interest).
+    - I like [finance](interest).
+    - I like [marketing](interest).
+    - I want to learn about [marketing](interest).
+    - I want to learn about [finance](interest).
+    - I want to learn about [operations](interest).
+    - I want to learn about [analytics](interest).
+    - I want to learn about [obhr](interest).
+    - My interest is in [data science](interest).
+    - I am passionate about [finance](interest).
+    - I enjoy [AI](interest).
+    - I am also interested in [marketing](interest).
+
+- intent: explain_course
+  examples: |
+    - Tell me about [Advanced AI](course).
+    - What is [Data Science](course)?
+    - Explain the [Digital Marketing](course) course.
+    - Can you tell me about [Corporate Finance](course)?
+    - I want to know more about [Consumer Behavior](course).
+    - Can you tell me more about [Brand Management](course)?
+
+- intent: ask_courses_by_credits
+  examples: |
+    - List all courses with [1](credits) credits.
+    - List all courses with [0.75](credits) credits.
+    - List all courses with [0.5](credits) credits.
+    - Show me courses with [0.75](credits) credits.
+    - Show me courses with [0.5](credits) credits.
+    - Show me courses with [1](credits) credits.
+    - What are the courses for [0.75](credits) credits?
+    - Which courses have [1](credits) credits?
+
+- intent: suggest_electives_by_credits
+  examples: |
+    - I am interested in [finance](interest) and want electives with total credits between [5](credit_min) and [6](credit_max).
+    - Suggest electives for [analytics](interest) with total credits from [3](credit_min) to [4](credit_max).
+    - I like [marketing](interest). Suggest electives with total credits between [2](credit_min) and [5](credit_max).
+    - I am interested in [finance](interest). Suggest electives with total credits from [4](credit_min) to [6](credit_max).
+
+- intent: who_are_you
+  examples: |
+    - Who are you?
+    - What is your name?
+    - Can you tell me about yourself?
+    - What are you?
+    - Who created you?
+    - Are you a human or a bot?
+    - Tell me about yourself.
+    - What do you do?
+    - What's your identity?
+    - Who made you?
+
+- intent: what_can_you_do
+  examples: |
+    - What can you do?
+    - What are your capabilities?
+    - How can you help me?
+    - What do you do?
+    - Tell me about your features.
+    - What are your functions?
+    - What tasks can you perform?
+    - Can you help me with something?
+    - What assistance can you provide?
+    - What services do you offer?
+
+- intent: elective_by_faculty
+  examples: |
+    - Can you give me more courses taught by [surender rao komera](faculty)
+    - Give me courses taught by [chetan chitre](faculty)
+    - What courses does [surender rao komera](faculty) teach?
+    - Show me the courses taught by [chetan chitre](faculty)
+    - List the electives taught by [surender rao komera](faculty)
+    - Can you tell me which courses [chetan chitre](faculty) teaches?
+    - I want to know the courses taught by [surender rao komera](faculty)
+    - Which electives are taught by [chetan chitre](faculty)?
+    - Provide me with the list of courses taught by [surender rao komera](faculty)
+    - What are the courses offered by [chetan chitre](faculty)?
+    - Tell me about the courses taught by [surender rao komera](faculty)
+    - Can you list the courses taught by [chetan chitre](faculty)?
+    - Give me a list of electives taught by [surender rao komera](faculty)
+    - What are the courses conducted by [chetan chitre](faculty)?
+    - Can you provide details about courses taught by [surender rao komera](faculty)?
+    - Show me all the courses taught by [chetan chitre](faculty)
