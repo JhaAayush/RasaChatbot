@@ -1,0 +1,123 @@
+version: "3.1"
+
+intents:
+  - greet
+  - goodbye
+  - affirm
+  - deny
+  - mood_great
+  - mood_unhappy
+  - bot_challenge
+  - ask_electives_list
+  - ask_elective_details
+  - suggest_electives
+  - inform_interest
+  - explain_course
+  - ask_courses_by_credits
+  - suggest_electives_by_credits
+  - who_are_you
+  - what_can_you_do
+  - elective_by_faculty
+entities:
+  - interest
+  - course
+  - course_code
+  - credits
+  - credit_min
+  - credit_max
+  - faculty
+
+
+slots:
+  credit_min:
+    type: float
+    influence_conversation: true
+    mappings:
+      - type: from_entity
+        entity: credit_min
+  credit_max:
+    type: float
+    influence_conversation: true
+    mappings:
+      - type: from_entity
+        entity: credit_max
+  interest:
+    type: list
+    influence_conversation: true
+    mappings:
+      - type: from_entity
+        entity: interest
+  course:
+    type: text
+    influence_conversation: true
+    mappings:
+      - type: from_entity
+        entity: course
+  course_code:
+    type: text
+    influence_conversation: true
+    mappings:
+      - type: from_entity
+        entity: course_code
+  credits:
+    type: text
+    influence_conversation: true
+    mappings:
+      - type: from_entity
+        entity: credits
+  faculty:
+    type: text
+    influence_conversation: true
+    mappings:
+      - type: from_entity
+        entity: faculty
+
+responses:
+  utter_greet:
+    - text: "Hey! How are you?"
+
+  utter_cheer_up:
+    - text: "Here is something to cheer you up:"
+      image: "https://shorturl.at/atfmx"
+
+  utter_did_that_help:
+    - text: "Did that help you?"
+
+  utter_happy:
+    - text: "Great, carry on!"
+
+  utter_goodbye:
+    - text: "Bye"
+
+  utter_who_are_you:
+    - text: "I am a chatbot designed to help students at IIM Amritsar select electives. My purpose is to assist you in choosing the right courses based on your interests and credit requirements."
+    - text: "I'm your virtual assistant here to guide you through elective selection at IIM Amritsar. Feel free to ask me anything about courses, credits, or recommendations!"
+    - text: "I'm a bot created to make elective selection easier for you. Let me know how I can help!"
+
+  utter_what_can_you_do:
+    - text: "I can help you with selecting electives at IIM Amritsar. I can provide a list of available electives, suggest courses based on your interests, explain course details, and help you find courses within a specific credit range."
+    - text: "I'm here to assist you with elective selection! I can show you the list of electives, recommend courses based on your interests, explain what a course is about, and help you find courses that fit your credit requirements."
+    - text: "My job is to make elective selection easier for you. I can provide course lists, suggest electives, explain course details, and help you find courses based on credit ranges."
+
+
+  utter_iamabot:
+    - text: "I am a bot, powered by Rasa."
+
+  utter_ask_interest:
+    - text: "What area are you interested in? For example, finance, analytics, or marketing."
+
+  utter_ask_course:
+    - text: "Which course would you like to know more about?"
+
+actions:
+  - action_list_electives
+  - action_get_elective_details
+  - action_suggest_electives
+  - action_explain_course
+  - action_list_courses_by_credits
+  - action_suggest_electives_by_credits
+  - action_suggest_electives_by_faculty
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true

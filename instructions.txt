@@ -1,0 +1,1 @@
+1. First run `rasa run --enable api` ; then run `rasa run actions`
