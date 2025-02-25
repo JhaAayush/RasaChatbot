@@ -35,7 +35,11 @@ This project is an AI-powered chatbot designed to assist students at IIM Amritsa
    ```bash
     rasa run actions
    ```
-1. **Test the Chatbot**:
+4. **Test the Chatbot in Shell**:
    ```bash
-   pip shell
-   ```   
+   rasa shell
+   ```
+   OR
+   ```bash
+   python app.py
+   ```
